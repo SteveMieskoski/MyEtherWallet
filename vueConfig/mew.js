@@ -33,10 +33,10 @@ const productionPlugins = [
       // so we create a snapshot of the page after the
       // `data-view` attribute exists in the DOM.
       // renderAfterElementExists: '[data-view]',
-      headless: false,
+      headless: process.env.NODE_ENV === 'production',
       maxConcurrentRoutes: 40,
       ignoreHTTPSErrors: true,
-      devtools: true,
+      devtools: process.env.NODE_ENV !== 'production',
       renderAfterDocumentEvent: 'render-event',
       // renderAfterDocumentEvent: 'render-event'
     }),
