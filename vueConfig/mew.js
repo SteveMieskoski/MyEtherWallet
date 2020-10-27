@@ -8,7 +8,7 @@ const path = require('path');
 
 const productionPlugins = [
   new PrerenderSpaPlugin({
-    staticDir: '/home/steve/mew/z_SCRAPs/MyEtherWallet/dist',
+    staticDir: path.join(path.resolve(__dirname,'../') , 'dist'),
     routes: ['/'],
     postProcess (renderedRoute) {
       // Ignore any redirects.
